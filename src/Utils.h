@@ -9,6 +9,9 @@ const int GREEN = -3;
 const int BLACK = -4;
 const int UNDEFINED = -5;
 
+const int speedOfMvt = 80;
+const int speedAtRotation = 150;
+
 void print(String t);
 
 void print(int n);
