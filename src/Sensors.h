@@ -9,7 +9,7 @@ public:
   SDL_Arduino_TCA9545 *multiplexer;
 
   Sensors();
-  Sensors(const SDL_Arduino_TCA9545 *multiplexer);
+  Sensors(SDL_Arduino_TCA9545 *multiplexer);
 
   // updates all color sensors' status
   void update ();

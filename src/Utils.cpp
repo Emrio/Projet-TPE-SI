@@ -43,4 +43,5 @@ int getRouteColor(int a, int b) {
   if (a == 5 && b == 4) return GREEN;
   if (a == 5 && b == 2) return BLUE;
   if (a == 5 && b == 3) return RED;
+  return 0;
 }

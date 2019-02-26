@@ -21,6 +21,10 @@ void Motors::setSpeed(int _speed) {
 void Motors::setSpeed() {
   analogWrite(pwmA, speed);
   analogWrite(pwmB, speed);
+  if (speed > 0) {
+    digitalWrite(brakeA, LOW);
+    digitalWrite(brakeB, LOW);
+  }
 }
 
 void Motors::forward () {

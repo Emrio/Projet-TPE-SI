@@ -41,6 +41,8 @@ int GPS::percentCompleted() {
 }
 
 int GPS::curRouteIndex() {
+  print("cur");
+  print(curIndex);
   return curIndex;
 }
 
@@ -136,7 +138,7 @@ void GPS::calculate() {
     route[1] = 5;
     route[2] = 2;
   }
-  curIndex = -1; // core.nextStep() is called directly after, this one calls this.nextStep() with increments curIndex
+  curIndex = 0;
 }
 
 void GPS::nextStep() {

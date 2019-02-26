@@ -7,7 +7,7 @@
 
 Sensors::Sensors(): colorToFollow(UNDEFINED), colorForward(UNDEFINED), colorRight(UNDEFINED), colorLeft(UNDEFINED) {}
 
-Sensors::Sensors(const SDL_Arduino_TCA9545 *_multiplexer): colorToFollow(UNDEFINED), colorForward(UNDEFINED), colorRight(UNDEFINED), colorLeft(UNDEFINED), multiplexer(_multiplexer) {}
+Sensors::Sensors(SDL_Arduino_TCA9545 *_multiplexer): colorToFollow(UNDEFINED), colorForward(UNDEFINED), colorRight(UNDEFINED), colorLeft(UNDEFINED), multiplexer(_multiplexer) {}
 
 // updates all color sensors' status
 void Sensors::update () {
