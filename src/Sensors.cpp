@@ -14,6 +14,11 @@ void Sensors::update () {
   colorForward = getColorV2(TCA9545_CONFIG_BUS1);
   colorRight = getColorV2(TCA9545_CONFIG_BUS0);
   colorLeft = getColorV2(TCA9545_CONFIG_BUS2);
+  print("Colors:");
+  print(colorForward);
+  print(colorLeft);
+  print(colorRight);
+  print("--");
 }
 
 // get the color detected by a color sensor
@@ -22,6 +27,8 @@ int Sensors::getColorV2 (int multiplexerOpt) {
   multiplexer->write_control_register(multiplexerOpt);
 
   Adafruit_TCS34725 tcs = Adafruit_TCS34725(TCS34725_INTEGRATIONTIME_50MS, TCS34725_GAIN_4X);
+
+  delay(50);
 
   // sensor not found
   if (!tcs.begin()) {

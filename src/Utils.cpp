@@ -1,4 +1,6 @@
 #include "Arduino.h"
+#include "Point.h"
+
 #include "Utils.h"
 
 String preceding_text = "";
@@ -38,10 +40,19 @@ String idToName(int id) {
 }
 
 int getRouteColor(int a, int b) {
-  if (a == 0 && b == 4) return RED;
-  if (a == 1 && b == 4) return BLUE;
-  if (a == 5 && b == 4) return GREEN;
-  if (a == 5 && b == 2) return BLUE;
-  if (a == 5 && b == 3) return RED;
+  if (a == 0 && b == 4 || a == 4 && b == 0) return RED;
+  if (a == 1 && b == 4 || a == 4 && b == 1) return BLUE;
+  if (a == 5 && b == 4 || a == 4 && b == 5) return GREEN;
+  if (a == 5 && b == 2 || a == 2 && b == 5) return BLUE;
+  if (a == 5 && b == 3 || a == 3 && b == 5) return RED;
   return 0;
+}
+
+int ABS(int x) {
+    return x > 0 ? x : -x;
+}
+
+int link(Point* a, Point* b) {
+    a->addNeighbor(b);
+    b->addNeighbor(a);
 }
